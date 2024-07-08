@@ -19,9 +19,15 @@
   text-align: center;
 
   &.encendida {
-    background-color: #00ffff;
+    background-color: #02e928;
+  }
+  &.encendida:hover {
+    background-color: #358003;
   }
   &.apagada {
-    background-color: #a52a2a;
+    background-color: #215002;
+  }
+  &.apagada:hover {
+    background-color: #49aa08;
   }
 }

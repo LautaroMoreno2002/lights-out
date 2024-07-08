@@ -1,11 +1,15 @@
 <div class="cont-tablero">
   <div class="tablero" style="--largo: {{ tablero.length }}">
-    @for (row of tablero; track row) {
-      @for (celda of row; track $index) {
+    @for (row of tablero; track row; let row2 = $index) {
+      @for (celda of row; track $index; let col2 = $index) {
         @if (celda.getEstado() === true) {
-          <div class="celda encendida" (click)="celda.cambiarEstado()">{{ celda.getEstado() }}</div>
+          <div class="celda encendida" (click)="apretarCelda(row2, col2)">
+            {{ celda.getEstado() }}
+          </div>
         } @else {
-          <div class="celda apagada" (click)="celda.cambiarEstado()">{{ celda.getEstado() }}</div>
+          <div class="celda apagada" (click)="apretarCelda(row2, col2)">
+            {{ celda.getEstado() }}
+          </div>
         }
       }
     }

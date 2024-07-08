@@ -34,5 +34,24 @@ export class TableroComponent implements OnInit {
     }
   }
 
-  
+  apretarCelda(_row: number, _col: number): void {
+    this.tablero[_row][_col].cambiarEstado();
+    this.intercambiarColumna(_row, _col);
+    this.intercambiarFila(_row, _col);
+  }
+
+  intercambiarFila(_row: number, _col: number): void {
+    for (let row = 0; row < this.largoTablero; row++) {
+      if (row != _row) {
+        this.tablero[row][_col].cambiarEstado();
+      }
+    }
+  }
+
+  intercambiarColumna(_row: number, _col: number): void {
+    for (let col = 0; col < this.largoTablero; col++) {
+      if (col != _col)
+        this.tablero[_row][col].cambiarEstado();
+    }
+  }
 }
