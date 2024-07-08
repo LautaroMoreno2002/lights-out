@@ -1,9 +1,9 @@
 .cont-tablero {
   display: flex;
-  height: 50vh;
   justify-content: center;
   align-items: center;
   background-color: #666;
+  height: 80vh;
 }
 .tablero {
   display: grid;
