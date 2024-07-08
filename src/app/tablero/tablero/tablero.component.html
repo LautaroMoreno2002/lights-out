@@ -1,0 +1,13 @@
+<div class="cont-tablero">
+  <div class="tablero" style="--largo: {{ tablero.length }}">
+    @for (row of tablero; track row) {
+      @for (celda of row; track $index) {
+        @if (celda.getEstado() === true) {
+          <div class="celda encendida" (click)="celda.cambiarEstado()">{{ celda.getEstado() }}</div>
+        } @else {
+          <div class="celda apagada" (click)="celda.cambiarEstado()">{{ celda.getEstado() }}</div>
+        }
+      }
+    }
+  </div>
+</div>
