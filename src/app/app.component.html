@@ -1,1 +1,7 @@
-<app-tablero [largoTablero]="3"/>
+<app-tablero [largoTablero]="3" [modalidad]="2" (juegoFinalizado)="leerEstadoJuego($event)"/>
+
+@if (this.juegoFinalizado === true) {
+  <p>¡¡¡ Felicidades, ganaste !!!</p>
+} @else {
+  <p>¡¡ Ánimo !!</p>
+ }

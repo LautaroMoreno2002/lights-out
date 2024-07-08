@@ -13,5 +13,9 @@ import { TableroComponent } from './tablero/tablero/tablero.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'lights-out-angular18';
+  juegoFinalizado: boolean = false;
+
+  leerEstadoJuego($event: boolean) {
+    this.juegoFinalizado = $event;
+  }
 }
