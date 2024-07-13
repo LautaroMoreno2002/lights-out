@@ -1,0 +1,27 @@
+.cont-form {
+  margin: 2em;
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  padding: 2em;
+  border: 2px solid var(--light-active);
+
+  .form-config {
+    text-align: center;
+  }
+
+  .cont-input {
+    margin: 0 0 2em;
+
+    .label {
+      margin-bottom: .5em;
+    }
+
+    .form-select {
+      text-align: center;
+    }
+  }
+}
+.btn {
+    width: 40%;
+}

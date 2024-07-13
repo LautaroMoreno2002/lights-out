@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableroComponent } from './tablero.component';
+import { FormConfigComponent } from './form-config.component';
 
-describe('TableroComponent', () => {
-  let component: TableroComponent;
-  let fixture: ComponentFixture<TableroComponent>;
+describe('FormConfigComponent', () => {
+  let component: FormConfigComponent;
+  let fixture: ComponentFixture<FormConfigComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TableroComponent]
+      imports: [FormConfigComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TableroComponent);
+    fixture = TestBed.createComponent(FormConfigComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

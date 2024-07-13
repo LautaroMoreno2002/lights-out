@@ -1,21 +1,26 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TableroComponent } from './tablero/tablero/tablero.component';
+import { BoardComponent } from './board-game/board/board.component';
+import { FormConfigComponent } from './form-config/form-config.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
-    TableroComponent
+    RouterOutlet, 
+    BoardComponent,
+    FormConfigComponent
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  juegoFinalizado: boolean = false;
+  finished: boolean = false;
+  level: number = 3;
+  mod: number = 1;
 
-  leerEstadoJuego($event: boolean) {
-    this.juegoFinalizado = $event;
+  StateBoard($event: boolean) {
+    this.finished = $event;
   }
+
 }
