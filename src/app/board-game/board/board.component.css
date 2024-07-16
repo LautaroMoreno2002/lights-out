@@ -13,6 +13,7 @@
   gap: 5px;
   color: #fff;
   padding: 5px;
+  border-radius: 5%;
   
   animation-name: iluminate-border;
   animation-direction: alternate-reverse;

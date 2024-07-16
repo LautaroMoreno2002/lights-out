@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Celda } from '../celda';
 
 @Component({
@@ -8,9 +8,10 @@ import { Celda } from '../celda';
   templateUrl: './board.component.html',
   styleUrl: './board.component.css',
 })
-export class BoardComponent {
-  @Input({ required: true }) boardLength: number = 3;
-  @Input({ required: true }) mod: number = 2;
+export class BoardComponent implements OnInit {
+  @Input() boardLength: number = 3;
+  @Input() mod?: number;
+
   @Output() finish = new EventEmitter<boolean>();
   board: Celda[][] = [];
 
@@ -39,7 +40,7 @@ export class BoardComponent {
       this.finish.emit(true);
     } else {
       this.board[_row][_col].offState();
-      if (this.mod === 1) {
+      if (this.mod == 1) {
         this.columnsLightOnM1(_row, _col);
         this.rowsLightOnM1(_row, _col);
       } else {
@@ -61,20 +62,10 @@ export class BoardComponent {
     }
     return state === false; // Si es true, hay una celda encendida
   }
-
+  
   rowsLightOnM1(_row: number, _col: number): void {
-    for (let row = 0; row < this.boardLength; row++)
-      if (row != _row) this.board[row][_col].offState();
-  }
-
-  columnsLightOnM1(_row: number, _col: number): void {
-    for (let col = 0; col < this.boardLength; col++)
-      if (col != _col) this.board[_row][col].offState();
-  }
-
-  rowsLightOnM2(_row: number, _col: number): void {
     let rowAnt = _row - 1,
-      rowPost = _row + 1;
+    rowPost = _row + 1;
     if (_row === 0) this.board[rowPost][_col].offState();
     else if (_row === this.boardLength - 1)
       this.board[rowAnt][_col].offState();
@@ -83,10 +74,10 @@ export class BoardComponent {
       this.board[rowPost][_col].offState();
     }
   }
-
-  columnsLightOnM2(_row: number, _col: number): void {
+  
+  columnsLightOnM1(_row: number, _col: number): void {
     let colAnt = _col - 1,
-      colPost = _col + 1;
+    colPost = _col + 1;
     if (_col === 0) this.board[_row][colPost].offState();
     else if (_col === this.boardLength - 1)
       this.board[_row][colAnt].offState();
@@ -94,5 +85,15 @@ export class BoardComponent {
       this.board[_row][colAnt].offState();
       this.board[_row][colPost].offState();
     }
+  }
+
+  rowsLightOnM2(_row: number, _col: number): void {
+    for (let row = 0; row < this.boardLength; row++)
+      if (row != _row) this.board[row][_col].offState();
+  }
+  
+  columnsLightOnM2(_row: number, _col: number): void {
+    for (let col = 0; col < this.boardLength; col++)
+      if (col != _col) this.board[_row][col].offState();
   }
 }

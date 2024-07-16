@@ -1,5 +1,5 @@
 <div class="cont-tablero">
-  <div class="tablero" style="--largo: {{ board.length }}">
+  <div class="tablero" style="--largo: {{ boardLength }}">
     @for (row of board; track row; let row2 = $index) { 
       @for (celda of row; track $index; let col2 = $index) { 
         @if (celda.getState() === true) {
