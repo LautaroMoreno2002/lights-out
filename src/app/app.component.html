@@ -1,16 +1,7 @@
-<app-form-config (levelConfig)="catchLevel($event)" (typeConfig)="catchType($event)" />
-
-@if (type == 1) {
-  @if (level == 3) {
-    <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
-  } @else if (level == 4) {
-    <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
-  } @else if (level == 5) {
-    <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
-  } @else {
-    <board [boardLength]="3" [mod]="type" (finish)="StateBoard($event)" />
-  }
-} @else if (type == 2) {
+<div>
+  <app-form-config (levelConfig)="catchLevel($event)" (typeConfig)="catchType($event)" />
+  
+  @if (type == 1) {
   @if (level == 3) {
   <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
   } @else if (level == 4) {
@@ -20,4 +11,16 @@
   } @else {
   <board [boardLength]="3" [mod]="type" (finish)="StateBoard($event)" />
   }
-}
+  } @else if (type == 2) {
+  @if (level == 3) {
+  <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
+  } @else if (level == 4) {
+  <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
+  } @else if (level == 5) {
+  <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
+  } @else {
+  <board [boardLength]="3" [mod]="type" (finish)="StateBoard($event)" />
+  }
+  }
+
+</div>
