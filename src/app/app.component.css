@@ -1,9 +1,17 @@
-div {
+.lights-out {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  height: 100vh;
   min-height: fit-content;
   gap: 10%;
+  height: 100vh;
+  background-color: #000;
+}
+.msg-player {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 5px;
+  background-color: #000;
 }

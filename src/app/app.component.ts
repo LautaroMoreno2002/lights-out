@@ -27,6 +27,5 @@ export class AppComponent {
   catchType($event2: number) {
     this.type = $event2;
     console.log($event2);
-    
   }
 }

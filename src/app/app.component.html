@@ -1,26 +1,35 @@
-<div>
+<div class="lights-out">
   <app-form-config (levelConfig)="catchLevel($event)" (typeConfig)="catchType($event)" />
   
-  @if (type == 1) {
-  @if (level == 3) {
-  <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
-  } @else if (level == 4) {
-  <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
-  } @else if (level == 5) {
-  <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
-  } @else {
-  <board [boardLength]="3" [mod]="type" (finish)="StateBoard($event)" />
+  <div class="game">
+    @if (type == 1) {
+      @if (level == 3) {
+        <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
+      } @else if (level == 4) {
+        <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
+      } @else if (level == 5) {
+        <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
+      } @else {
+        <board [boardLength]="3" [mod]="type" (finish)="StateBoard($event)" />
+      }
   }
-  } @else if (type == 2) {
-  @if (level == 3) {
-  <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
-  } @else if (level == 4) {
-  <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
-  } @else if (level == 5) {
-  <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
-  } @else {
-  <board [boardLength]="3" [mod]="type" (finish)="StateBoard($event)" />
+  @if (type == 2) {
+    @if (level == 3) {
+      <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
+    } @else if (level == 4) {
+      <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
+    } @else if (level == 5) {
+      <board [boardLength]="level" [mod]="type" (finish)="StateBoard($event)" />
+    } @else {
+      <board [boardLength]="3" [mod]="type" (finish)="StateBoard($event)" />
+    }
   }
-  }
-
+  <div class="msg-player">
+    @if (finished) {
+      <p style="color: #fff;">¡¡¡ Felicidades, ganaste el juego !!!</p>
+    } @else {
+      <p style="color: #fff;">¡¡¡ Ánimo !!!</p>
+    }
+  </div>
+  </div>
 </div>

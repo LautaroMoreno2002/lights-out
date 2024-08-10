@@ -1,10 +1,7 @@
 .cont-form {
-  margin: 2em;
-  width: 100%;
-  max-width: 300px;
-  height: 300px;
-  padding: 2em;
-  border: 2px solid var(--light-active);
+  width: 350px;
+  padding: 3em;
+  border: 4px solid var(--light-active);
 
   .form-config {
     text-align: center;
@@ -15,13 +12,29 @@
 
     .label {
       margin-bottom: .5em;
+      color: var(--light-active);
     }
 
     .form-select {
       text-align: center;
+      border: 2px solid var(--light-active);
+      color: var(--light-active);
+      background-color: black;
+    }
+
+    .form-select option {
+      color: var(--light-active);
     }
   }
 }
 .btn {
     width: 40%;
+    color: var(--light-active);
+    border: 2px solid var(--light-active);
+}
+
+.label {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
